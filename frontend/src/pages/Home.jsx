@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, styled } from '@mui/material';
-import Slide from './Slide';
-import Banner from './Banner';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../redux/userHandle';
-import ProductsMenu from './customer/components/ProductsMenu';
-import { NewtonsCradle } from '@uiball/loaders';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Box, Container, styled } from "@mui/material";
+import Slide from "./Slide";
+import Banner from "./Banner";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../redux/userHandle";
+import ProductsMenu from "./customer/components/ProductsMenu";
+import { NewtonsCradle } from "@uiball/loaders";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const adURL =
-    'https://rukminim1.flixcart.com/flap/464/708/image/1f03e99f6dc9f7a6.jpg?q=70';
+    "https://rukminim1.flixcart.com/flap/464/708/image/1f03e99f6dc9f7a6.jpg?q=70";
 
   const dispatch = useDispatch();
 
-  const { productData, responseProducts, error } = useSelector((state) => state.user);
+  const { productData, responseProducts, error } = useSelector(
+    (state) => state.user
+  );
 
   const [showNetworkError, setShowNetworkError] = useState(false);
 
@@ -36,18 +38,18 @@ const Home = () => {
     <div id="top">
       <Container
         sx={{
-          display: 'none',
-          '@media (max-width: 600px)': {
-            display: 'flex',
+          display: "none",
+          "@media (max-width: 600px)": {
+            display: "flex",
           },
         }}
       >
         <ProductsMenu dropName="Categories" />
         <ProductsMenu dropName="Products" />
       </Container>
-      <BannerBox>
+      {/* <BannerBox>
         <Banner />
-      </BannerBox>
+      </BannerBox> */}
 
       {showNetworkError ? (
         <StyledContainer>
@@ -65,9 +67,7 @@ const Home = () => {
               <StyledContainer>No products found right now</StyledContainer>
               <StyledContainer>
                 Become a seller to add products
-                <Link to={"/Sellerregister"}>
-                  Join
-                </Link>
+                <Link to={"/Sellerregister"}>Join</Link>
               </StyledContainer>
             </>
           ) : (
@@ -106,7 +106,7 @@ const StyledContainer = styled(Container)`
 
 const BannerBox = styled(Box)`
   padding: 20px 10px;
-  background: #F2F2F2;
+  background: #f2f2f2;
 `;
 
 const Component = styled(Box)`
@@ -114,20 +114,20 @@ const Component = styled(Box)`
 `;
 
 const LeftComponent = styled(Box)(({ theme }) => ({
-  width: '83%',
-  [theme.breakpoints.down('md')]: {
-    width: '100%',
+  width: "83%",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
   },
 }));
 
 const RightComponent = styled(Box)(({ theme }) => ({
   marginTop: 10,
-  background: '#FFFFFF',
-  width: '17%',
+  background: "#FFFFFF",
+  width: "17%",
   marginLeft: 10,
   padding: 5,
-  textAlign: 'center',
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
+  textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    display: "none",
   },
 }));
