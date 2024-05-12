@@ -9,9 +9,6 @@ Become a seller and add products, monitor sales, and gather customer feedback.
 
 <br>
 
-[Youtube Video](https://youtu.be/i_z0HYk3IuQ?si=S04-IBq7Ny8k0FYC)
-<br><br>
-[LinkedIn](https://www.linkedin.com/in/yogndr/)
 
 # About
 
@@ -41,67 +38,3 @@ ShopCart is an ecommerce site developed using the MERN (MongoDB, Express.js, Rea
 - Data Visualization: React Apexcharts
 
 <br>
-
-# Installation
-
-```sh
-git clone https://github.com/Yogndrr/MERN-Ecommerce-Site.git
-```
-
-Open 2 terminals in separate windows/tabs.
-
-Terminal 1: Setting Up Backend
-
-```sh
-cd backend
-npm install
-npm start
-```
-
-Create a file called .env in the backend folder.
-Inside it write this :
-
-```sh
-MONGO_URL = mongodb://127.0.0.1/ecommerce
-
-SECRET_KEY = 'secret-key'
-```
-
-Instead of this link write your database link.
-
-Terminal 2: Setting Up Frontend
-
-```sh
-cd frontend
-npm install
-npm start
-```
-
-Now, navigate to `localhost:3000` in your browser.
-The Backend API will be running at `localhost:5000`.
-<br>
-
-# Error Solution
-
-If you encounter a network error while signing up, follow these steps to resolve it:
-
-1. Navigate to the `src > redux > userHandle.js` file.
-
-2. Add the following line after the import statements:
-
-```javascript
-const REACT_APP_BASE_URL = "http://localhost:5000";
-```
-
-3. Replace all instances of `REACT_APP_BASE_URL` with `REACT_APP_BASE_URL`.
-
-The issue arises because the `.env` file in the frontend may not work for all users, while it works for me.
-
-These steps should resolve the network error in the frontend. If the issue persists, feel free to contact me for further assistance.
-
-Don't forget to leave a star for this project if you found the solution helpful. Thank you!
-
-# Deployment
-
-- Render - server side
-- Vercel - client side
